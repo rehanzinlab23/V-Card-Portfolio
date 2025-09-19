@@ -5,6 +5,9 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script type="module"
+          src="https://cdn.jsdelivr.net/npm/@mariohamann/activity-graph/dist/activity-graph.min.js"></script>
+     <link rel="shortcut icon" href="Assets/Images/man.png" type="image/x-icon" style="background-color: aqua;">
      <link rel="stylesheet" href="style.css">
      <title>V-Card Portfolio</title>
 </head>
@@ -12,52 +15,193 @@
 <body class="">
 
      <div class="container">
-          <nav class="navbar">
-               <div class="box theme">
-                    <div class="item">
-                         <ion-icon name="sunny-outline"></ion-icon>
+
+          <!-- Navbar -->
+          <div class="flex">
+               <nav class="navbar">
+                    <div class="box theme">
+                         <div class="item" onclick="theme()">
+                              <ion-icon id="lightBtn" name="sunny-outline"></ion-icon>
+                              <ion-icon id="darkBtn" name="moon-outline" style="display: none;"></ion-icon>
+                         </div>
+                    </div>
+                    <div class="box nav">
+                         <div class="item active">
+                              <a href="#about">
+                                   <ion-icon name="person-circle-outline"></ion-icon>
+                                   <p>about</p>
+                              </a>
+                              <div class="divider rtl"></div>
+                         </div>
+                         <div class="item">
+                              <a href="#resume">
+                                   <ion-icon name="file-tray-outline"></ion-icon>
+                                   <p>resume</p>
+                              </a>
+                              <div class="divider rtl"></div>
+                         </div>
+                         <div class="item">
+                              <a href="#projects">
+                                   <ion-icon name="layers-outline"></ion-icon>
+                                   <p>projects</p>
+                              </a>
+                              <div class="divider rtl"></div>
+                         </div>
+                         <div class="item">
+                              <a href="#blogs">
+                                   <ion-icon name="reader-outline"></ion-icon>
+                                   <p>blogs</p>
+                              </a>
+                              <div class="divider rtl"></div>
+                         </div>
+                         <div class="item">
+                              <a href="#contact">
+                                   <ion-icon name="paper-plane-outline"></ion-icon>
+                                   <p>contact</p>
+                              </a>
+                              <div class="divider rtl"></div>
+                         </div>
+                    </div>
+               </nav>
+
+               <!-- Profile -->
+
+               <div class="box profile">
+                    <img class="header" src="Assets/Images/cover.jpeg" alt="">
+                    <img class="img" src="Assets/Images/3d.png" alt="">
+                    <h2>Rehan Hussain</h2>
+                    <p id="typed" class="colored">Front-End Developer</p>
+                    <ul>
+                         <li><a href="https://github.com/rehanzinlab23" target="_blank"><ion-icon
+                                        name="logo-github"></ion-icon></a></li>
+                         <li><a href="https://www.facebook.com/profile.php?id=100075276017007" target="_blank"><ion-icon
+                                        name="logo-facebook"></ion-icon></a></li>
+                         <li><a href="https://www.instagram.com/rehan_zinlab/" target="_blank"><ion-icon
+                                        name="logo-instagram"></ion-icon></a></li>
+
+                    </ul>
+                    <div class="footer">
+                         <div class="divider rtl"></div>
+                         <table>
+                              <tr>
+                                   <td><a href="#">My Resume <ion-icon name="file-tray-full-outline"></ion-icon></a>
+                                   </td>
+                                   <td><a href="#">Contact Me <ion-icon name="call-outline"></ion-icon></a></td>
+                              </tr>
+                         </table>
                     </div>
                </div>
-               <div class="box nav">
-                    <div class="item">
-                         <a href="#about">
-                              <ion-icon name="person-circle-outline"></ion-icon>
-                              <p>about</p>
-                         </a>
-                         <div class="divider ltr"></div>
-                    </div>
-                    <div class="item">
-                         <a href="#resume">
-                              <ion-icon name="file-tray-outline"></ion-icon>
-                              <p>resume</p>
-                         </a>
-                         <div class="divider ltr"></div>
-                    </div>
-                    <div class="item">
-                         <a href="#projects">
-                              <ion-icon name="layers-outline"></ion-icon>
-                              <p>projects</p>
-                         </a>
-                         <div class="divider ltr"></div>
-                    </div>
-                    <div class="item">
-                         <a href="#blogs">
-                              <ion-icon name="reader-outline"></ion-icon>
-                              <p>blogs</p>
-                         </a>
-                         <div class="divider ltr"></div>
-                    </div>
-                    <div class="item">
-                         <a href="#contact">
-                              <ion-icon name="paper-plane-outline"></ion-icon>
-                              <p>contact</p>
-                         </a>
-                         <div class="divider ltr"></div>
-                    </div>
+
+               <!-- Content -->
+
+               <div class="box content">
+
+                    <h2>Hey <span class="colored">there!</span> 👋</h2>
+                    <div class="divider ltr"></div>
+                    <p>
+                         I'm thrilled to tell you a bit about myself. I have over 2 years of IT experience,
+                         specializing in <span class="colored">JavaScript, Web Development, and Open-source
+                              frameworks.</span> If you're in need of a
+                         motivated team player, let's connect!
+                    </p>
+
+                    <!-- Achivements -->
+
+                    <sction class="achivements">
+                         <div>
+                              <h3><ion-icon name="layers-outline"></ion-icon> 2K+</h3>
+                              <p>Website Designed</p>
+                         </div>
+                         <div>
+                              <h3><ion-icon name="briefcase-outline"></ion-icon> 2+</h3>
+                              <p>Years of Experience</p>
+                         </div>
+                         <div>
+                              <h3><ion-icon name="rocket-outline"></ion-icon> 4K</h3>
+                              <p>Completed Projects</p>
+                         </div>
+                    </sction>
+
+                    <!-- Skills -->
+
+                    <h2>My <span class="colored">Skills</span></h2>
+                    <div class="divider ltr"></div>
+                    <section class="skills">
+                         <div><ion-icon name="logo-html5"></ion-icon>
+                              <p>HTML5</p>
+                         </div>
+                         <div><ion-icon name="logo-css3"></ion-icon>
+                              <p>CSS</p>
+                         </div>
+                         <div><ion-icon name="logo-javascript"></ion-icon>
+                              <p>JavaScript</p>
+                         </div>
+                         <div><ion-icon name="logo-designernews"></ion-icon>
+                              <p>Graphic Designing</p>
+                         </div>
+                         <div>
+                              <div class="circle">
+                                   <h4>90<small>%</small></h4>
+                              </div>
+                              <p>My Progress</p>
+                         </div>
+                         <div>
+                              <div class="circle" style="--percent: 35;">
+                                   <h4>35<small>%</small></h4>
+                              </div>
+                              <p>My Progress</p>
+                         </div>
+                         <div>
+                              <div class="progress-bar">
+                                   <p>Web Development <span>90%</span></p>
+                                   <progress max="100" value="90"></progress>
+                              </div>
+                              <div class="progress-bar">
+                                   <p>Video Editing<span>35%</span></p>
+                                   <progress max="100" value="35"></progress>
+                              </div>
+
+                         </div>
+                    </section>
+
+                    <!-- Experience -->
+
+                    <h1>My <span class="colored">Experience</span></h1>
+                    <div class="divider ltr"></div>
+
+                    <section class="experiences">
+                         <div class="experience">
+                              <h2>Front-End Developer</h2>
+                              <h4>Google Inc. <span class="date">Jan, 2024</span></h4>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quam rerum, velit
+                                   numquam voluptatem qui modi doloremque molestias, libero id tempore assumenda ad
+                                   recusandae totam. Laboriosam, perferendis. Veritatis, repellat mollitia.</p>
+                         </div>
+                         <div class="experience">
+                              <h2>Graphic Designer</h2>
+                              <h4>Design Enthusiast. <span class="date">Nov, 2022</span> &#x26AC; <span
+                                        class="date">Jul,
+                                        2024</span></h4>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quam rerum, velit
+                                   numquam voluptatem qui modi doloremque molestias, libero id tempore assumenda ad
+                                   recusandae totam. Laboriosam, perferendis. Veritatis, repellat mollitia.</p>
+                         </div>
+                         <div class="experience">
+                              <h2>Video Editor</h2>
+                              <h4>Edit Specialist. <span class="date">May, 2022</span> &#x26AC; <span class="date">Sep,
+                                        2024</span></h4>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quam rerum, velit
+                                   numquam voluptatem qui modi doloremque molestias, libero id tempore assumenda ad
+                                   recusandae totam. Laboriosam, perferendis. Veritatis, repellat mollitia.</p>
+                         </div>
+                    </section>
+
+
+
+
+
                </div>
-          </nav>
-          <div class="box profile">profile</div>
-          <div class="box content">content</div>
+          </div>
      </div>
 
 
@@ -65,7 +209,7 @@
 
 
 
-
+     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
      <script src="main.js"></script>
 </body>
 
